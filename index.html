@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A beautiful, modern calculator with glassmorphism design, standard and scientific modes, and smooth animations." />
+  <title>Premium Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated background orbs -->
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+
+  <div class="calculator" id="calculator">
+    <!-- Mode toggle -->
+    <div class="mode-toggle">
+      <button class="mode-btn active" id="btn-standard" data-mode="standard">Standard</button>
+      <button class="mode-btn" id="btn-scientific" data-mode="scientific">Scientific</button>
+      <div class="mode-slider" id="mode-slider"></div>
+    </div>
+
+    <!-- Display -->
+    <div class="display" id="display">
+      <div class="display-expression" id="display-expression"></div>
+      <div class="display-result" id="display-result">0</div>
+    </div>
+
+    <!-- History panel toggle -->
+    <button class="history-toggle" id="history-toggle" title="Toggle history">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+    </button>
+
+    <!-- Scientific buttons (hidden by default) -->
+    <div class="scientific-panel" id="scientific-panel">
+      <button class="calc-btn scientific-btn" data-action="sin">sin</button>
+      <button class="calc-btn scientific-btn" data-action="cos">cos</button>
+      <button class="calc-btn scientific-btn" data-action="tan">tan</button>
+      <button class="calc-btn scientific-btn" data-action="log">log</button>
+      <button class="calc-btn scientific-btn" data-action="ln">ln</button>
+      <button class="calc-btn scientific-btn" data-action="sqrt">√</button>
+      <button class="calc-btn scientific-btn" data-action="pow">x²</button>
+      <button class="calc-btn scientific-btn" data-action="pi">π</button>
+      <button class="calc-btn scientific-btn" data-action="e">e</button>
+      <button class="calc-btn scientific-btn" data-action="factorial">n!</button>
+      <button class="calc-btn scientific-btn" data-action="open-paren">(</button>
+      <button class="calc-btn scientific-btn" data-action="close-paren">)</button>
+    </div>
+
+    <!-- Standard buttons -->
+    <div class="buttons-grid" id="buttons-grid">
+      <button class="calc-btn fn-btn" data-action="clear" id="btn-clear">AC</button>
+      <button class="calc-btn fn-btn" data-action="toggle-sign" id="btn-toggle-sign">±</button>
+      <button class="calc-btn fn-btn" data-action="percent" id="btn-percent">%</button>
+      <button class="calc-btn op-btn" data-action="divide" id="btn-divide">÷</button>
+
+      <button class="calc-btn num-btn" data-action="7" id="btn-7">7</button>
+      <button class="calc-btn num-btn" data-action="8" id="btn-8">8</button>
+      <button class="calc-btn num-btn" data-action="9" id="btn-9">9</button>
+      <button class="calc-btn op-btn" data-action="multiply" id="btn-multiply">×</button>
+
+      <button class="calc-btn num-btn" data-action="4" id="btn-4">4</button>
+      <button class="calc-btn num-btn" data-action="5" id="btn-5">5</button>
+      <button class="calc-btn num-btn" data-action="6" id="btn-6">6</button>
+      <button class="calc-btn op-btn" data-action="subtract" id="btn-subtract">−</button>
+
+      <button class="calc-btn num-btn" data-action="1" id="btn-1">1</button>
+      <button class="calc-btn num-btn" data-action="2" id="btn-2">2</button>
+      <button class="calc-btn num-btn" data-action="3" id="btn-3">3</button>
+      <button class="calc-btn op-btn" data-action="add" id="btn-add">+</button>
+
+      <button class="calc-btn num-btn zero-btn" data-action="0" id="btn-0">0</button>
+      <button class="calc-btn num-btn" data-action="decimal" id="btn-decimal">.</button>
+      <button class="calc-btn equals-btn" data-action="equals" id="btn-equals">=</button>
+    </div>
+
+    <!-- History panel -->
+    <div class="history-panel" id="history-panel">
+      <div class="history-header">
+        <h3>History</h3>
+        <button class="history-clear" id="history-clear">Clear</button>
+      </div>
+      <div class="history-list" id="history-list">
+        <p class="history-empty">No history yet</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
